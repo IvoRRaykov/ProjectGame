@@ -11,4 +11,16 @@ public enum LevelEnum {
 		return level;
 	}
 
+	public static LevelEnum getEnumByLevel(int level) {
+		switch (level) {
+		case 1:
+			return LEVEL1;
+		case 2:
+			return LEVEL2;
+		case 3:
+			return LEVEL3;
+		}
+		return null;
+	}
+
 };

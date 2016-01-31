@@ -43,6 +43,7 @@ public class Zone {
 	public LevelEnum getLevel() {
 		return level;
 	}
+
 	public void setLifes(int lifes) {
 		this.lifes = lifes;
 	}
@@ -50,11 +51,16 @@ public class Zone {
 	public Color getColor() {
 		return color;
 	}
-	
+
 	public int getLifes() {
 		return lifes;
 	}
-	
+
+	@Override
+	public String toString() {
+		return this.name + " | " + this.level;
+	}
+
 	//
 	// @Override
 	// public int compareTo(Zone toCmp) {

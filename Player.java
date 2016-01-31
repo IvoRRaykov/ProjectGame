@@ -22,18 +22,16 @@ public class Player {
 
 	Player(Color color) {
 		this.color = color;
-		giveZonesToPlayer();
-		for (int i = 0; i < zones.size(); i++) {
-			this.points += zones.get(i).getPoints();
-		}
+		this.points = Constants.STARTING_POINTS;
 
+		zones = new ArrayList<Zone>();
+		allQuestions = new TreeMap<Integer, Question>();
 		this.fillAllQuestions();
 
 	}
-
-	void giveZonesToPlayer() {
-		
-	}
+public TreeMap<Integer, Question> getAllQuestions() {
+	return allQuestions;
+}
 
 	private void fillAllQuestions() {
 		Set<String> questions = Constants.defaultQuestions.keySet();
@@ -42,7 +40,7 @@ public class Player {
 			Collections.shuffle(questionsArray);
 			if (questionsArray.get(0) != null) {
 				allQuestions.put(i, new Question(questionsArray.get(0)));
-				questionsArray.remove(i);
+				questionsArray.remove(0);
 			} else {
 				i--;
 				continue;
@@ -151,6 +149,14 @@ public class Player {
 
 	public int getPoints() {
 		return points;
+	}
+	
+	public ArrayList<Zone> getZones() {
+		return zones;
+	}
+	
+	public void setZones(ArrayList<Zone> zones) {
+		this.zones = zones;
 	}
 
 }

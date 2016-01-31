@@ -7,10 +7,10 @@ public class Question {
 
 	private List<Answer> answers;
 
-	public Question(String question) {
+	public Question(String text) {
 
-		this.text = question;
-		answers = Constants.defaultQuestions.get(question);
+		this.text = text;
+		answers = Constants.defaultQuestions.get(text);
 	}
 
 	public String getText() {
@@ -35,4 +35,9 @@ public class Question {
 		return null;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return text;
+	}
 }
